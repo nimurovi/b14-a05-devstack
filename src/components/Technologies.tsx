@@ -1,6 +1,7 @@
 import { use, useState } from "react";
 import Technologycard from "./Technologycard";
 import Selectedtechnology from "./Selectedtechnology";
+import { toast } from "react-toastify";
 
 export interface Typeofdata {
     id: string,
@@ -26,14 +27,22 @@ export default function Technologies({ fetchedData }: Technologies) {
 
         const newTechnologies = [...selectedTechnoloies, technology];
         setSelectedTechnologies(newTechnologies)
+        toast("item is added")
 
     }
-    const handleRemAll = ( ) => {
+    const handleRemAll = () => {
         setSelectedTechnologies([]);
+        if (selectedTechnoloies.length === 0) {
+            toast("item is not avaiable")
+        }
+        else
+            toast("all items are removed")
     }
-    const handleRemSpacific=(id:string)=>{
-        const remainingTechnologiesFromSelected= selectedTechnoloies.filter(technology=>technology.id !==id)
+    const handleRemSpacific = (id: string) => {
+        const remainingTechnologiesFromSelected = selectedTechnoloies.filter(technology => technology.id !== id)
         setSelectedTechnologies(remainingTechnologiesFromSelected);
+
+        toast("item is removed")
     }
     return (
         <>
@@ -52,7 +61,7 @@ export default function Technologies({ fetchedData }: Technologies) {
                 <div className="container mx-auto p-4  col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 gap-4" >
                     <Selectedtechnology
                         selectedTechnoloies={selectedTechnoloies}
-                        handleRemSpacific={ handleRemSpacific}
+                        handleRemSpacific={handleRemSpacific}
                         handleRemAll={handleRemAll}
                     />
                 </div>

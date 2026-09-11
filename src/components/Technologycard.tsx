@@ -57,7 +57,7 @@ export default function Technologycard({ technology , handleSelect,selectedTechn
                 className={ `mt-5 w-full rounded-lg   py-3 text-sm font-medium  transition hover:bg-[#DB2777] hover:text-white ${isSelected?"cursor-not-allowed bg-slate-300 text-[#DB2777]" :"bg-slate-950 text-white hover:bg-slate-800"}`} 
                 onClick={() => handleSelect(technology)}
             >
-                {isSelected?<div className="flex justify-center gap-2 "> <TiTick /> Added to Stack </div>:"Add to Stack"}
+                {isSelected?<div className="flex justify-center gap-2 "> <TiTick /> Added to Stack </div>  :"Add to Stack"}
             </button>
         </div>
     );

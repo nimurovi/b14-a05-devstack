@@ -3,7 +3,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className='border-b-2 border-gray-200'>
+            <nav className='sticky top-0 z-50 bg-white border-b-2 border-gray-200'>
                 <div className='container mx-auto  flex justify-between items-center p-4  '>
                     <img src={logo} alt="Logo" />
 
