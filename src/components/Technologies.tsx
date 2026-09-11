@@ -23,9 +23,9 @@ export default function Technologies({ fetchedData }: Technologies) {
     const [selectedTechnoloies, setSelectedTechnologies] = useState<Typeofdata[]>([]);
 
     const handleTechnologySelect = (technology: Typeofdata) => {
-        const newTechnologies= [...selectedTechnoloies, technology];
+        const newTechnologies = [...selectedTechnoloies, technology];
         setSelectedTechnologies(newTechnologies)
-
+    }
     return (
         <>
             <div className='container mx-auto p-4 mt-8'>
@@ -40,9 +40,11 @@ export default function Technologies({ fetchedData }: Technologies) {
                         ))
                     }
                 </div>
-                <div className="container mx-auto p-4 mt-8 col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 gap-4" >
-                     
-                </div>  
+                <div className="container mx-auto p-4  col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 gap-4" >
+                    <Selectedtechnology
+                        selectedTechnoloies={selectedTechnoloies}
+                    />
+                </div>
             </div>
         </>
     )
