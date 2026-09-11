@@ -2,9 +2,10 @@ import { ImCross } from "react-icons/im";
 import type { Typeofdata } from "./Technologies";
 interface Selectedtechcardprops {
     s: Typeofdata;
+    handleRemSpacific:(id:string)=>void
 }
 
-export default function Selectedtechcard({ s }: Selectedtechcardprops) {
+export default function Selectedtechcard({ s,handleRemSpacific }: Selectedtechcardprops) {
     console.log(s);
     return (
         <>
@@ -31,7 +32,7 @@ export default function Selectedtechcard({ s }: Selectedtechcardprops) {
 
                 </div>
  
-                <button  className="text-3xl text-slate-400 hover:text-red-500">
+                <button onClick={()=>handleRemSpacific(s.id)} className="text-3xl text-slate-400 hover:text-red-500">
                    <ImCross />
                 </button>
 

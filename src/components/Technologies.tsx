@@ -23,8 +23,17 @@ export default function Technologies({ fetchedData }: Technologies) {
     const [selectedTechnoloies, setSelectedTechnologies] = useState<Typeofdata[]>([]);
 
     const handleTechnologySelect = (technology: Typeofdata) => {
+
         const newTechnologies = [...selectedTechnoloies, technology];
         setSelectedTechnologies(newTechnologies)
+
+    }
+    const handleRemAll = ( ) => {
+        setSelectedTechnologies([]);
+    }
+    const handleRemSpacific=(id:string)=>{
+        const remainingTechnologiesFromSelected= selectedTechnoloies.filter(technology=>technology.id !==id)
+        setSelectedTechnologies(remainingTechnologiesFromSelected);
     }
     return (
         <>
@@ -36,13 +45,15 @@ export default function Technologies({ fetchedData }: Technologies) {
                 <div className="container mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-3" >
                     {
                         allfetchedData.map((technology: Typeofdata) => (
-                            <Technologycard key={technology.id} technology={technology} handleSelect={handleTechnologySelect} />
+                            <Technologycard key={technology.id} selectedTechnoloies={selectedTechnoloies} technology={technology} handleSelect={handleTechnologySelect} />
                         ))
                     }
                 </div>
                 <div className="container mx-auto p-4  col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 gap-4" >
                     <Selectedtechnology
                         selectedTechnoloies={selectedTechnoloies}
+                        handleRemSpacific={ handleRemSpacific}
+                        handleRemAll={handleRemAll}
                     />
                 </div>
             </div>

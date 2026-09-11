@@ -1,8 +1,10 @@
 
+import { TiTick } from "react-icons/ti";
 import type { Typeofdata } from "./Technologies";
 
-export default function Technologycard({ technology , handleSelect }: { technology: Typeofdata; handleSelect: (technology: Typeofdata) => void }) {
 
+export default function Technologycard({ technology , handleSelect,selectedTechnoloies  }: { technology: Typeofdata; handleSelect: (technology: Typeofdata) => void ;selectedTechnoloies: Typeofdata[] }) {
+       const isSelected=selectedTechnoloies.some((item)=>item.id===technology.id)
 
     return (
         <div className="w-full max-w-[340px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
@@ -51,10 +53,11 @@ export default function Technologycard({ technology , handleSelect }: { technolo
 
             <button
                 type="button"
-                className="mt-5 w-full rounded-lg bg-slate-950 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+                disabled={isSelected}
+                className={ `mt-5 w-full rounded-lg   py-3 text-sm font-medium  transition hover:bg-[#DB2777] hover:text-white ${isSelected?"cursor-not-allowed bg-slate-300 text-[#DB2777]" :"bg-slate-950 text-white hover:bg-slate-800"}`} 
                 onClick={() => handleSelect(technology)}
             >
-                Add to Stack
+                {isSelected?<div className="flex justify-center gap-2 "> <TiTick /> Added to Stack </div>:"Add to Stack"}
             </button>
         </div>
     );
