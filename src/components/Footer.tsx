@@ -30,7 +30,7 @@ export default function Footer( ) {
                         <p>Careers</p>
                     </div>
                     <div className='flex flex-col text-[#475569] gap-5'>
-                        <h1 className='font-bold'>LEGAL</h1>
+                        <h1 className='font-bold4'>LEGAL</h1>
                         <p>Privacy policy</p>
                         <p>Terms of service</p>
 

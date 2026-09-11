@@ -4,10 +4,11 @@ export interface technoloyProps {
     selectedTechnoloies: Typeofdata[]
     handleRemAll: () => void
     handleRemSpacific:(id:string)=>void
+     
 }
 
-export default function Selectedtechnology({ selectedTechnoloies, handleRemAll, handleRemSpacific }: technoloyProps) {
-
+export default function Selectedtechnology({ selectedTechnoloies, handleRemAll, handleRemSpacific  }: technoloyProps) {
+ 
     return (
         <>
 
@@ -40,10 +41,12 @@ export default function Selectedtechnology({ selectedTechnoloies, handleRemAll, 
                     }
 
                 </div>
-
-                <button onClick={handleRemAll} className="mt-24 w-full rounded-2xl border border-red-400 py-3 text-2xl font-semibold text-red-500 transition hover:bg-red-50">
+                {
+                    selectedTechnoloies.length>0 && <button onClick={handleRemAll} className="mt-24 w-full rounded-2xl border border-red-400 py-3 text-2xl font-semibold text-red-500 transition hover:bg-red-50">
                     Remove All
-                </button>
+                </button> 
+                }    
+                    
             </div>
 
 

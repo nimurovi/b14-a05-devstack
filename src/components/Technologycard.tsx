@@ -5,8 +5,10 @@ import type { Typeofdata } from "./Technologies";
 
 export default function Technologycard({ technology , handleSelect,selectedTechnoloies  }: { technology: Typeofdata; handleSelect: (technology: Typeofdata) => void ;selectedTechnoloies: Typeofdata[] }) {
        const isSelected=selectedTechnoloies.some((item)=>item.id===technology.id)
-
+         
+         
     return (
+        
         <div className="w-full max-w-[340px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
 
 

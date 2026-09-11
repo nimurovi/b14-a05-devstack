@@ -6,7 +6,7 @@ interface Selectedtechcardprops {
 }
 
 export default function Selectedtechcard({ s,handleRemSpacific }: Selectedtechcardprops) {
-    console.log(s);
+     
     return (
         <>
             <div className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white px-5 py-4">
