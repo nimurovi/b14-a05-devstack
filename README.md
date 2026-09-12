@@ -1,5 +1,7 @@
 Project Name:Dev Stack
-Description:This project is very effective to practise with those topics like  Typescript, React-components,React-state,Tailwind,Daisy Ui. 
+
+Description:Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your and for me this project was very effective for practising code with those topics like  Typescript, React-components,React-state,Tailwind,Daisy Ui. 
+
 Technology:Ts,React-js,Html,Tailwind,Daisy UI 
 Features: 1.It shows the all technology.
           2.We can select the technology in a stack.
