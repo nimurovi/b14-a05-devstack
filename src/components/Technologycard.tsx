@@ -9,7 +9,7 @@ export default function Technologycard({ technology , handleSelect,selectedTechn
          
     return (
         
-        <div className="w-full max-w-[340px] rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <div className={ `w-full max-w-[340px] rounded-2xl border  ${isSelected ? "border-[#DB2777]":"border-white"}  bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md`}>
 
 
             <div className="flex items-start justify-between">

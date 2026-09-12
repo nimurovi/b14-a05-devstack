@@ -22,7 +22,7 @@ export interface Technologies {
 export default function Technologies({ fetchedData }: Technologies) {
     const allfetchedData = use(fetchedData);
     const [selectedTechnoloies, setSelectedTechnologies] = useState<Typeofdata[]>([]);
-     const handleTechnologySelect = (technology: Typeofdata) => {
+    const handleTechnologySelect = (technology: Typeofdata) => {
 
         const newTechnologies = [...selectedTechnoloies, technology];
         setSelectedTechnologies(newTechnologies)
@@ -47,31 +47,33 @@ export default function Technologies({ fetchedData }: Technologies) {
     }
     return (
         <>
-            <div className='container mx-auto p-4 mt-8'>
-                <h1 className="text-3xl font-extrabold mb-4">Explore the <span className="text-[#DB2777]"> Technologies</span></h1>
-                <p className="text-lg text-[#475569]">Pick one technology per category to build your ideal stack.</p>
-            </div>
-            <div className="container mx-auto p-4 mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"  >
-                <div className="container mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-3" >
-                    {
-                        allfetchedData.map((technology: Typeofdata) => (
-                            <Technologycard
-                                key={technology.id}
-                                selectedTechnoloies={selectedTechnoloies}
-                                technology={technology}
-                                handleSelect={handleTechnologySelect}
-                                 
-                            />
-                        ))
-                    }
+            <div className="flex flex-col justify-center items-center">
+                <div className='flex flex-col justify-center items-center lg:items-start container mx-auto p-4 mt-8'>
+                    <h1 className="text-3xl font-extrabold mb-4">Explore the <span className="text-[#DB2777]"> Technologies</span></h1>
+                    <p className="text-lg text-[#475569]">Pick one technology per category to build your ideal stack.</p>
                 </div>
-                <div className="container mx-auto p-4  col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 gap-4" >
-                    <Selectedtechnology
-                         
-                        selectedTechnoloies={selectedTechnoloies}
-                        handleRemSpacific={handleRemSpacific}
-                        handleRemAll={handleRemAll}
-                    />
+                <div className=" container mx-auto p-4 mt-8 items-center md:items-start   grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4"  >
+                    <div className="container mx-auto   grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3" >
+                        {
+                            allfetchedData.map((technology: Typeofdata) => (
+                                <Technologycard
+                                    key={technology.id}
+                                    selectedTechnoloies={selectedTechnoloies}
+                                    technology={technology}
+                                    handleSelect={handleTechnologySelect}
+
+                                />
+                            ))
+                        }
+                    </div>
+                    <div className="container mx-auto p-4  col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 gap-4" >
+                        <Selectedtechnology
+
+                            selectedTechnoloies={selectedTechnoloies}
+                            handleRemSpacific={handleRemSpacific}
+                            handleRemAll={handleRemAll}
+                        />
+                    </div>
                 </div>
             </div>
         </>

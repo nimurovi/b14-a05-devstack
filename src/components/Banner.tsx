@@ -4,8 +4,8 @@ export default function Banner() {
 
     return (
         <>
-            <div className='container mx-auto grid grid-cols-2 gap-4 justify-between items-center p-4 mt-8'>
-                <div className='flex flex-col gap-10'>
+            <div className='container mx-auto   md:grid md:grid-cols-2 gap-4 justify-between items-center p-4 mt-8'>
+                <div className='flex justify-center  items-center md:items-start  flex-col gap-10'>
                     <h1 className='text-3xl font-extrabold'>Build Your Ideal <br />
                         <span className='bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500'>Development Stack</span> </h1>
                     <p className='text-lg text-[#475569]'>Explore frontend, backend, database, and tooling options, <br />
